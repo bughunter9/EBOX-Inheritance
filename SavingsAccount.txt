@@ -1,0 +1,22 @@
+#include<iostream>
+#include "Account.cpp"
+using namespace std;
+class SavingAccount: public Account
+{
+ protected:
+ double minimumBalance;
+ public:
+ SavingAccount(){}
+ SavingAccount(double minimumBalance)
+ {
+ this->minimumBalance=minimumBalance;
+ }
+ void setMinimumBalance(double minimumBalance)
+ {
+ this->minimumBalance=minimumBalance;
+ }
+ double getMinimumBalance()
+ {
+ return minimumBalance;
+ }
+};

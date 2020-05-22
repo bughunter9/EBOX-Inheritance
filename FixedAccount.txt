@@ -1,0 +1,44 @@
+#ifndef HEADER
+#define HEADER
+#include<iostream>
+#include<string>
+#include<stdio.h>
+#include<iomanip>
+#include <bits/stdc++.h>
+#include "SavingAccount.cpp"
+using namespace std;
+class FixedAccount: public SavingAccount
+{
+ private:
+ int lockingPeriod;
+ public:
+ FixedAccount(){}
+ FixedAccount(int lockingPeriod)
+ {
+ this->lockingPeriod=lockingPeriod;
+ }
+ void setLockingPeriod(int lockingPeriod)
+ {
+ this->lockingPeriod=lockingPeriod;
+ }
+ int getLockingPeriod()
+ {
+ return lockingPeriod;
+ }
+ void display()
+ {
+ cout<<"Account Details:"<<endl;
+ string acchname = getAccountHolderName();
+ int n = acchname.length();
+ char acc_name[n + 1];
+ strcpy(acc_name, acchname.c_str());
+ string accno = getAccountNumber();
+ n = accno.length();
+ char acc_no[n + 1];
+ strcpy(acc_no, accno.c_str());
+ printf("%-20s%-20s%-20s%-20s%-20s\n", "AccountHolderName", "AccountNumber", "Balance", "MinimumBalance", "LockingPeriod"); 
+    printf("%-20s%-20s%-20.2f%-20.2f%-20d\n", acc_name, acc_no, getBalance(), getMinimumBalance(), getLockingPeriod());
+   // cout<<acc_name<<acc_no<<getBalance()<<getMinimumBalance()<<getLockingPeriod();
+ }
+};
+#endif

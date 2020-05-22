@@ -1,0 +1,43 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class Account
+{
+ protected:
+ string accountHolderName;
+ string accountNumber;
+ double balance;
+ public:
+ Account(){}
+ Account(string accountHolderName,string accountNumber,double balance)
+ {
+ this->accountHolderName=accountHolderName;
+ this->accountNumber=accountNumber;
+ this->balance=balance;
+ }
+ void setAccountHolderName(string accountHolderName)
+ {
+ this->accountHolderName=accountHolderName;
+ }
+ string getAccountHolderName()
+ {
+ return accountHolderName;
+ }
+ void setAccountNumber(string accountNumber)
+ {
+ this->accountNumber=accountNumber;
+ }
+ string getAccountNumber()
+ {
+ return accountNumber;
+ }
+ void setBalance(double balance)
+ {
+ this->balance=balance;
+ }
+ double getBalance()
+ {
+ return balance;
+ }
+};
+//#endif

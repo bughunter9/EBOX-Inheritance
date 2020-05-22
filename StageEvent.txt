@@ -1,0 +1,36 @@
+#include <iostream>
+#include<stdio.h>
+#include<iomanip>
+#include"Event.h"
+using namespace std;
+class StageEvent:public Event
+{
+ private:
+ int noOftickets;
+ public:
+ StageEvent(){}
+ StageEvent(string name, string detail, string type, string organiser , int
+noOftickets, double costPerDay):Event( name, detail, type, organiser, costPerDay)
+ {
+ this->noOftickets = noOftickets;
+ }
+ void setNoOftickets(int noOfSeats){
+ this->noOftickets = noOfSeats;
+ }
+ int getNoOftickets(){
+ return noOftickets;
+ }
+ double calculateCost(int days)
+ {
+ double norm = (getCostPerDay() * days)*1.15;
+ return norm;
+ }
+ void display(int days){
+ cout<<"Name : "<<getName();
+ cout<<endl<<"Detail : "<<getDetail();
+ cout<<endl<<"Type : "<<getType();
+ cout<<endl<<"Organiser : "<<getOrganiser();
+ cout<<endl<<"Number of Seats : "<<getNoOftickets();
+ cout<<endl<<"Total cost for "<< days <<" days is : Rs."<<fixed<<setprecision(2)<<calculateCost(days);
+ }
+};

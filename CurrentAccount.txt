@@ -1,0 +1,21 @@
+#include <iostream>
+#include "Account.h"
+using namespace std;
+class CurrentAccount : public Account
+{
+ private:
+ string tinNumber;
+ public:
+ void setTinNumber(string tinNumber){
+ this->tinNumber = tinNumber;
+ }
+ string getTinNumber(){
+ return tinNumber;
+ }
+ void display(){
+ cout<<"Account holder name:"<<getAccName();
+ cout<<endl<<"Account number:"<<getAccNo();
+ cout<<endl<<"Bank name:"<<getBankName();
+ cout<<endl<<"TIN number:"<<getTinNumber();
+ }
+};
