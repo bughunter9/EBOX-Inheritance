@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+#include "Developer.cpp"
+int main(void)
+{
+    string name,skills,role;
+    int empId,experience;
+    //fill your code
+    cout<<"\nEnter the name";
+    cin>>name;
+    cout<<"\nEnter the experience";
+    cin>>experience;
+    cout<<"\nEnter the employee id";
+    cin>>empId;
+    cout<<"\nEnter the technical skills of the developer";
+    cin>>skills;
+    cout<<"\nEnter the role of the developer";
+    cin>>role;
+    Developer d(name, experience, empId, skills, role);
+    d.displayDetails();
+    return 0;
+}

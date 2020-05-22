@@ -1,0 +1,19 @@
+#include<iostream>
+#include<stdio.h>
+#include<string>
+using namespace std;
+class FourWheeler{
+    protected:
+    string gearType;
+    string fuelType;
+    
+    public:
+    FourWheeler(){}
+    FourWheeler(string gearType, string fuelType)
+    {
+        this->gearType=gearType;
+        this->fuelType=fuelType;
+    }
+    
+   
+};

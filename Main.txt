@@ -1,87 +1,34 @@
 #include <iostream>
-#include<stdio.h>
-#include<string.h>
-#include<sstream>
-#include<stdlib.h>
-#include<cstdlib>
-#include<iomanip>
-#include"Exhibition.cpp"
-#include"StageEvent.cpp"
+#include <string>
+#include <stdio.h>
 using namespace std;
-string* splitString(string str){
-string* arr = new string[25];
-int i=0;
-string delimiter = ",";
-size_t pos = 0;
-string token;
-str+=",";
-while ((pos = str.find(delimiter)) != string::npos) {
- token = str.substr(0, pos);
- arr[i]=token;
- str.erase(0, pos + delimiter.length());
- i++;
-}
- return arr;
-}
-int main()
+#include "Truck.cpp"
+
+int main(void)
 {
- int choice;
- int i=0;
- string str,*str1;
- string exhibitionDetail, stageEvent;
- int days;
- int x,y;
- double totalcost,cost;
- cout<<"Event List\n";
- cout<<"Press 1 for Exhibition\n";
- cout<<"Press 2 for Stage Event\n";
- cin>>choice;
- switch(choice)
- {
- case 1:
- {
- string values;
- cout<<"Enter the details of Exhibition";
- getline(cin, values);
- getline(cin, values);
- string *arr = splitString(values);
- stringstream seats(arr[4]);
- stringstream cost(arr[5]);
- int seat;
- double costpd;
- seats >> seat;
- cost >> costpd;
- Exhibition ex(arr[0], arr[1], arr[2], arr[3], seat, costpd);
- int days;
- cout<<endl<<"Enter the total number of days:";
- cin>>days;
- cout<<endl;
- cout<<"Exhibition"<<endl;
- ex.display(days);
- break;
- }
- case 2:
- {
- string values;
- cout<<"Enter the details of Stage Event";
- getline(cin, values);
- getline(cin, values);
- string *arr = splitString(values);
- stringstream seats(arr[4]);
- stringstream cost(arr[5]);
- int seat;
- double costpd;
- seats >> seat;
- cost >> costpd;
- StageEvent sa(arr[0], arr[1], arr[2], arr[3], seat, costpd);
- int days;
- cout<<endl<<"Enter the total number of days:";
- cin>>days;
- cout<<endl;
- cout<<"Stage Event"<<endl;
- sa.display(days);
- break;
- }
- }
- return 0;
+    string model,gearType,fuelType,size;
+    int year,cargoCapacity;
+    string manufacturer;
+    //fill your code
+    cout<<"Enter the model of the vehicle";
+    getline(cin, model);
+    //cin>>model;
+    cout<<"\nEnter the manufactured year";
+    cin>>year;
+    cout<<"\nEnter the name of the manufacturer";
+    //cin>>manufacturer;
+    cin.ignore();
+    getline(cin, manufacturer);
+    //getline(cin, manufacturer);
+    cout<<"\nEnter the gear type of the four wheeler";
+    cin>>gearType;
+    cout<<"\nEnter the fuel type of the four wheeler";
+    cin>>fuelType;
+    cout<<"\nEnter the cargo capacity of the truck";
+    cin>>cargoCapacity;
+    cout<<"\nEnter the size of the truck";
+    cin>>size;
+    Truck t(model, year, manufacturer, gearType, fuelType, cargoCapacity, size);
+    t.displayDetails();
+    return 0;
 }

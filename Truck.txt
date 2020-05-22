@@ -1,0 +1,35 @@
+#include<iostream>
+#include<stdio.h>
+#include<string>
+using namespace std;
+#include "FourWheeler.h"
+#include "Vehicle.h"
+
+class Truck: public FourWheeler, public Vehicle{
+    private:
+    int cargoCapacity;
+    string size;
+    
+    public:
+    Truck(){}
+    Truck(string model, int year, string manufacturer, string gearType, string fuelType, int cargoCapacity, string size):FourWheeler(gearType, fuelType),Vehicle(model, year, manufacturer){
+        this->cargoCapacity=cargoCapacity;
+        this->size=size;
+    }
+    
+    //fill your code
+    
+    void displayDetails()
+    {
+        cout<<"\nTruck Details";
+        cout<<"\nModel : "<<model;
+        cout<<"\nYear : "<<year;
+        cout<<"\nManufacturer : "<<manufacturer;
+        cout<<"\nGear Type : "<<gearType;
+        cout<<"\nFuel Type : "<<fuelType;
+        cout<<"\nCargo Capacity : "<<cargoCapacity<<" MT";
+        cout<<"\nSize : "<<size;
+        //fill your code
+
+    }
+};
