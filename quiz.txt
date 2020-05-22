@@ -1,0 +1,27 @@
+1. Compilation error
+2. Compilation error
+3. Event no:3.3 Event no:3.6
+4. 	class Employee{};
+	class Manager : public Employee{};
+
+5. 	class Vehicle{};
+	class TwoWheeler : public Vehicle{};
+	class FourWheeler : public Vehicle{};
+	class car: public FourWheeler {};
+
+6. 	(1)int a,int b
+	(2)int a,int b,int c
+
+7. Overrides the print function
+8. 	AB ab;
+	ab.A::print();
+	ab.B::print();
+
+9. 	class A {}; 
+	class B: public A {};
+	class C: public A {};
+	class D: public A {};
+
+10.	C class
+	B class
+	A class
